@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register DbContext
+// Register DatabaseContext properly with DI
 builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer("Data Source=db-mssql;Initial Catalog=s31236;Integrated Security=True;Trust Server Certificate=True;MultipleActiveResultSets=True"));
 
 // Register your service
 builder.Services.AddScoped<IDbService, DbService>();

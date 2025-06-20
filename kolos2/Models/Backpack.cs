@@ -7,15 +7,14 @@ public class Backpack
 {
     [Key]
     public int IdBackpack { get; set; }
+
     public int CharacterID { get; set; }
     public int ItemID { get; set; }
-    
-    [ForeignKey(nameof(Item))]
+    [ForeignKey("ItemID")]
     public Item Item { get; set; }
-    
-    [ForeignKey(nameof(Character))]
+
+    [ForeignKey("CharacterID")]
     public Character Character { get; set; }
-    
+
     public int Amount { get; set; }
-    
 }

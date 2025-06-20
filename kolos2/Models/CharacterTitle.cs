@@ -7,12 +7,15 @@ public class CharacterTitle
 {
     [Key]
     public int CharacterTitleId { get; set; }
+
     public int CharacterId { get; set; }
     public int TitleId { get; set; }
-    [ForeignKey(nameof(Character))]
+
+    [ForeignKey("CharacterId")]
     public Character Character { get; set; }
-    [ForeignKey(nameof(Title))]
+
+    [ForeignKey("TitleId")]
     public Title Title { get; set; }
+
     public DateTime AcquiredAt { get; set; }
-    
 }

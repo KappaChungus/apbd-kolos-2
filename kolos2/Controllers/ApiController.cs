@@ -16,7 +16,7 @@ public class ApiController :ControllerBase
     [HttpGet("characters/{id}")]
     public async Task<ActionResult> GetCharacters([FromRoute] int id)
     {
-        return Ok(_dbService.GetCharacterAsync(id));
+        return Ok(await _dbService.GetCharacterAsync(id));
     }
     
 }

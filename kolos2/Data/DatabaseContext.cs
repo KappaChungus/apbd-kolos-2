@@ -48,8 +48,15 @@ public class DatabaseContext: DbContext
 
         modelBuilder.Entity<CharacterTitle>().HasData(new List<CharacterTitle>
         {
-            new CharacterTitle { CharacterId = 1, TitleId = 1, AcquiredAt = DateTime.Now }
+            new CharacterTitle
+            {
+                CharacterTitleId = 1,
+                CharacterId = 1,
+                TitleId = 1,
+                AcquiredAt = DateTime.Now
+            }
         });
+
         
     }
 
